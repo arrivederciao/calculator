@@ -1,38 +1,187 @@
+@import url('https://fonts.googleapis.com/css2?family=Poppins:wght@100;200;300;400;500;600;700;800;900&display=swap');
+
+body {
+  margin: 0;
+}
+
 .App {
   text-align: center;
+  font-family: 'Poppins', sans-serif;
+  height: 100vh;
+  width: 100vw;
+  background-color: #393c44;
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+.calculator {
+  background: linear-gradient(180deg, rgb(35.91, 40.44, 51) 0%, rgb(21.64, 23.75, 28.69) 100%);
+  height: 812px;
+  left: 50%;
+  position: absolute;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  width: 375px;
+  border-radius: 40px;
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
 }
 
-.App-link {
-  color: #61dafb;
+.display-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+  color: #f8f6f0;
+  padding: 10px 20px;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+.display {
+  font-size: 48px;
+}
+
+.controls-container {
+  flex: 1;
+  padding: 10px;
+}
+
+.controls-row {
+  display: flex;
+  justify-content: space-between;
+  padding: 5px 5px;
+}
+
+.button {
+  background-color: #545f71;
+  box-shadow: inset 4px 4px 4px #636c7d, 3px 3px 7px #00000026;
+}
+
+.top-left-control {
+  background-color: #545f71;
+  box-shadow: inset 4px 4px 4px #636c7d, 3px 3px 7px #00000026;
+}
+
+.top-left-control .rectangle {
+  background: linear-gradient(180deg, rgb(70, 82, 98) 0%, rgb(98, 107, 124) 100%);
+  border-radius: 18px;
+  filter: blur(2px);
+  height: 66px;
+  left: 5px;
+  position: relative;
+  top: 5px;
+  width: 66px;
+}
+
+.button {
+  background-color: #252b38;
+  box-shadow: inset 4px 4px 4px #383e4e, 3px 3px 7px #00000026;
+}
+
+.button .rectangle {
+  background: linear-gradient(180deg, rgb(42, 48, 62) 0%, rgb(57, 62, 81) 100%);
+  border-radius: 18px;
+  filter: blur(2px);
+  height: 66px;
+  left: 5px;
+  position: relative;
+  top: 5px;
+  width: 66px;
+}
+
+.button-text {
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  color: #f8f6f0;
+  font-size: 24px;
+  font-weight: 400;
+}
+
+.control-button {
+  border-radius: 23px;
+  height: 77px;
+  position: relative;
+  width: 77px;
+  cursor: pointer;
+}
+
+.rectangle {
+  transition: .2s ease;
+}
+
+.control-button:active .rectangle {
+  opacity: 0;
+}
+
+.button-right {
+  background-color: #d9781f;
+  box-shadow: inset 4px 4px 4px #dc862d, 3px 3px 7px #00000026;
+}
+
+.button-right .rectangle {
+  background: linear-gradient(180deg, rgb(221, 114.64, 46.96) 0%, rgb(226, 141, 33) 100%);
+  border-radius: 18px;
+  filter: blur(2px);
+  height: 66px;
+  left: 5px;
+  position: relative;
+  top: 5px;
+  width: 66px;
+}
+
+.wide-button {
+  background-color: #252b38;
+  box-shadow: inset 4px 4px 4px #383e4e, 3px 3px 7px #00000026;
+  width: 165px;
+}
+
+.wide-button .rectangle {
+  background: linear-gradient(180deg, rgb(42, 48, 62) 0%, rgb(57, 62, 81) 100%);
+  border-radius: 18px;
+  filter: blur(2px);
+  height: 66px;
+  left: 5px;
+  position: relative;
+  top: 5px;
+  width: 155px;
+}
+
+/* Responsive Styles */
+
+@media screen and (max-width: 1800px) {
+  .calculator {
   }
-  to {
-    transform: rotate(360deg);
+  .rectangle{
+    display: none;
+  }
+  
+  .display-container {
+    padding: 10px;
+  }
+  
+  .display {
+    font-size: 36px;
+  }
+  
+  .controls-container {
+    padding: 5px;
+  }
+  
+  .control-button {
+    width: 25%;
+    height: 50px;
+    font-size: 18px;
+  }
+  
+  .button-text {
+    font-size: 18px;
+  }
+  
+  .wide-button {
+    width: 100%;
+  }
+  
+  .wide-button .rectangle {
+    width: 100%;
   }
 }
